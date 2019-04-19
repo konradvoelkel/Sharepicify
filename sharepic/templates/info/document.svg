@@ -23,7 +23,7 @@
     -->
 
     <g v-bind:style="{ 'transform': 'scale(' + Math.min((850 - 180) / (180 + (textInfo(title[0].toUpperCase(), { fontFamily: 'Jost', fontSize: '135px' }).height - 60) * title.length), (1200 - 100) / Math.max(...title.map(line => textInfo(line, { fontFamily: 'Jost', fontSize: '135px' }).width))) + ')' }" style="transform-origin: 50px 180px;">
-      <text style="font-size: 135px; font-family: 'Jost'; fill: #000;" x="50" v-bind:y="180 + (textInfo(line.toUpperCase(), { fontFamily: 'Jost', fontSize: '135px' }).height - 60) * title.indexOf(line)" alignment-baseline="hanging" v-for="line in title">
+      <text style="font-size: 135px; font-family: 'Jost'; fill: #000;" x="50" v-bind:y="180 + (textInfo(line.toUpperCase(), { fontFamily: 'Jost', fontSize: '135px' }).height - 50) * title.indexOf(line)" alignment-baseline="hanging" v-for="line in title">
         {{ line }}
       </text>
     </g>

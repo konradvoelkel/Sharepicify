@@ -402,8 +402,8 @@
       </text>
 
 
-      <g v-if="description.length > 0">
-        <rect transform="rotate(-40, 750, 750)" v-bind:x="750 - (textInfo(description, { fontFamily: 'Merriweather', fontSize: '150px' }).width / 2)" y="575" v-bind:width="textInfo(description, { fontFamily: 'Merriweather', fontSize: '150px' }).width" height="250"/>
+      <g v-if="description.length > 0" style="transform-origin: 600px 600px;" v-bind:style="{ 'transform': 'scale(' + Math.min(500 / textInfo(description, { fontFamily: 'Merriweather', fontSize: '150px' }).height, 1000 / textInfo(description, { fontFamily: 'Merriweather', fontSize: '150px' }).width) + ')' }">
+        <rect transform="rotate(-40, 750, 750)" v-bind:x="750 - (textInfo(description, { fontFamily: 'Merriweather', fontSize: '150px' }).width / 2)" y="600" v-bind:width="textInfo(description, { fontFamily: 'Merriweather', fontSize: '150px' }).width" height="200"/>
         <text x="50%" y="50%" transform="rotate(-40, 750, 750)" alignment-baseöine="middle" text-anchor="middle" style="fill: #fff; font-size: 130px; font-family: 'Merriweather';">
           {{ description }}
         </text>
