@@ -1,6 +1,6 @@
 {
   "name": "Info",
-  "preview": "sharepic/templates/info/preview.jpg",
+  "preview": "sharepic/templates/info/preview.png",
   "document": "sharepic/templates/info/document.svg",
   "fonts": [
     {
