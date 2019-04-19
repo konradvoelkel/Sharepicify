@@ -6,9 +6,10 @@ var svgViewController;
 
 const templateUrls = [
   "sharepic/templates/fff/template.json",
+  "sharepic/templates/info/template.json",
   "sharepic/templates/date/template.json",
   "sharepic/templates/sentence/template.json",
-  "sharepic/templates/logo/template.json",
+  "sharepic/templates/logo/template.json"
   //"sharepic/templates/widescreen/template.json"
 ];
 

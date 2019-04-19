@@ -1,0 +1,118 @@
+{
+  "name": "Info",
+  "preview": "sharepic/templates/info/preview.jpg",
+  "document": "sharepic/templates/info/document.svg",
+  "fonts": [
+    {
+      "name": "Jost",
+      "src": "fonts/jost.ttf",
+      "mime": "font/truetype"
+    },
+    {
+      "name": "Merriweather",
+      "src": "fonts/Merriweather Sans.ttf",
+      "mime": "font/truetype"
+    }
+  ],
+  "fields": [
+    {
+      "type": "selection",
+      "description": "Background",
+      "key": "backgroundImage",
+      "default": {
+        "value": "sharepic/templates/info/default.jpg",
+        "info": {
+          "ratio": 1
+        }
+      },
+      "properties": {
+        "items": [
+          {
+            "type": "value",
+            "value": "#1DA64A",
+            "render": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiMxREE2NEEiLz48L3N2Zz4="
+          },
+          {
+            "type": "value",
+            "value": "#1B7340",
+            "render": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiMxQjczNDAiLz48L3N2Zz4="
+          },
+          {
+            "type": "file"
+          }
+        ]
+      }
+    },
+    {
+      "type": "selection",
+      "description": "Text Background",
+      "key": "textBg",
+      "default": "#1B7340",
+      "properties": {
+        "items": [
+          {
+            "type": "value",
+            "value": "#1B7340",
+            "render": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiMxQjczNDAiLz48L3N2Zz4="
+          },
+          {
+            "type": "value",
+            "value": "#1DA64A",
+            "render": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiMxREE2NEEiLz48L3N2Zz4="
+          }
+        ]
+      }
+    },
+    {
+      "type": "line",
+      "description": "Subtitle",
+      "key": "subtitle",
+      "default": "FridaysForFuture fordert:"
+    },
+    {
+      "type": "text",
+      "description": "Title",
+      "key": "title",
+      "default": ["Einhaltung der", "Netonull für", "Treibhausgase", "bis 2035."],
+      "properties": {
+
+      }
+    },
+    {
+      "type": "line",
+      "description": "Description",
+      "key": "description",
+      "default": "AUS DEN “FORDERUNGEN FÜR DEN UMWELTSCHUTZ”"
+    },
+    {
+      "type": "line",
+      "description": "Organisation",
+      "key": "organisation",
+      "default": "#FridaysForFuture"
+    },
+    {
+      "type": "selection",
+      "description": "Logo",
+      "key": "logo",
+      "properties": {
+        "items": [
+          {
+            "type": "value",
+            "value": "sharepic/resources/logo.svg"
+          },
+          {
+            "type": "value",
+            "value": "sharepic/resources/logo-2.svg"
+          },
+          {
+            "type": "value",
+            "value": "sharepic/resources/logo-3.svg"
+          },
+          {
+            "type": "file"
+          }
+        ]
+      }
+    }
+  ]
+}
