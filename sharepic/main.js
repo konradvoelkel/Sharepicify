@@ -147,9 +147,12 @@ class PicCreator {
         el: this.previewMain,
         data: data,
         methods: {
-          textInfo: PicCreator.textInfo
+          textInfo: PicCreator.textInfo,
+          textFitWidth: PicCreator.textFitWidth
         }
       });
+
+      console.log(dataController);
 
       this.replaceURLsWithData();
 
@@ -290,6 +293,36 @@ class PicCreator {
       e.addEventListener(options.eventListeners[i].type, options.eventListeners[i].callback);
     }
     return e;
+  }
+
+  static textFitWidth(str, width, style = {}) {
+    const span = document.createElement("span");
+    span.style.fontFamily = style.fontFamily;
+    span.classList.add("test-text-fit");
+    span.append(str);
+    document.body.append(span);
+
+    var fontSize = 11;
+
+    console.log(span.getBoundingClientRect());
+
+    while (span.getBoundingClientRect().width < width) {
+      fontSize++;
+
+      span.style.fontSize = fontSize + "px";
+
+    }
+
+    const result = {
+      bounding: span.getBoundingClientRect(),
+      fontSize: span.style.fontSize
+    };
+
+    document.body.removeChild(span);
+
+    console.log(result);
+
+    return result;
   }
 
 }

@@ -14,20 +14,30 @@
 
     <rect x="0" y="0" width="100%" height="100%" fill="#1DA64A" v-bind:fill-opacity="0" />
 
-    <g v-for="line in title">
+    <g style="transform-origin: 50px 50px;" v-bind:style="{ 'transform': 'scale(' + Math.min(...[(subtitle.join('').length ? 850 : 1100) / (50 + 190 * title.length), (1200 - 100) / Math.max(...title.map(line => textInfo(line, { fontFamily: 'Jost', fontSize: '150px' }).width + 40))]) + ')' }">
 
-      <rect x="50" v-bind:y="50 + 190 * (title.indexOf(line) + 0)" v-bind:height="textInfo(line.toUpperCase(), { fontFamily: 'Jost', fontSize: '150px' }).height - 50" v-bind:fill="textBg" v-bind:width="textInfo(line.toUpperCase(), { fontFamily: 'Jost', fontSize: '150px'}).width + 40" v-bind:fill-opacity="opacity"/>
+      <g v-for="line in title">
+
+        <rect x="50" v-bind:y="50 + 190 * title.indexOf(line)" v-bind:height="textInfo(line.toUpperCase(), { fontFamily: 'Jost', fontSize: '150px' }).height - 50" v-bind:fill="textBg" v-bind:width="textInfo(line, { fontFamily: 'Jost', fontSize: '150px'}).width + 40" v-bind:fill-opacity="opacity"/>
 
 
-      <text alignment-baseline="middle" x="70" fill="#fff" v-bind:y="22.5 + 130 + 190 * (title.indexOf(line) + 0)" style="font-size: 150px; font-family: 'Jost', 'Helvetica Neue';">
-        {{ line }}
-      </text>
+        <text alignment-baseline="middle" x="75" fill="#fff" v-bind:y="22.5 + 130 + 190 * (title.indexOf(line) + 0)" style="font-size: 150px; font-family: 'Jost', 'Helvetica Neue';">
+          {{ line }}
+        </text>
+
+      </g>
 
     </g>
 
-    <text x="80" fill="#fff" v-bind:y="(145 + 180 * title.length) + 85 * subtitle.indexOf(line)" style="font-size: 85px; font-family: 'Merriweather', 'Helvetica Neue', 'Helvetica'; text-shadow: 0px 0px 7px rgba(0, 0, 0, 1);" v-for="line in subtitle">
-      {{ line }}
-    </text>
+    <!--<rect x="0" width="100%" height="10px" style="fill: #f00;" y="900"/>-->
+    <!--
+      v-bind:data-height-scale="(1200 - 850 - 50) / (85 * subtitle.length)" v-bind:style="{ 'transform-origin': '80px ' + (50 + (50 + 190 * title.length) * Math.min(...[850 / (50 + 190 * title.length), (1200 - 100) / Math.max(...title.map(line => textInfo(line.toUpperCase(), { fontFamily: 'Jost', fontSize: '150px' }).width + 40))])) + 'px', 'transform': 'scale(' + Math.min((1200 - 850 - 50) / (85 * subtitle.length), (50 + (50 + 190 * title.length) * Math.min(...[850 / (50 + 190 * title.length), (1200 - 100) / Math.max(...title.map(line => textInfo(line.toUpperCase(), { fontFamily: 'Jost', fontSize: '150px' }).width + 40))])) > 850 ? (800 / Math.max(...subtitle.map(line => textInfo(line, { fontFamily: 'Merriweather', fontSize: '85px'}).width))) : 1) + ')' }"
+  -->
+    <g style="transform-origin: 80px 1200px; transform: scale(1);">
+      <text alignment-baseline="hanging" x="80" fill="#fff" v-bind:y="50 + (50 + 190 * title.length) * Math.min(...[850 / (50 + 190 * title.length), (1200 - 100) / Math.max(...title.map(line => textInfo(line, { fontFamily: 'Jost', fontSize: '150px' }).width + 40))]) + 85 * subtitle.indexOf(line)" style="font-size: 85px; font-family: 'Merriweather', 'Helvetica Neue', 'Helvetica'; text-shadow: 0px 0px 7px rgba(0, 0, 0, 1);" v-for="line in subtitle">
+        {{ line }}
+      </text>
+    </g>
 
     <image v-bind:xlink:href="typeof logo == 'object' ? logo.value : logo" x="930" y="930" height="250" width="250" />
 

@@ -11,17 +11,21 @@
 
     <rect x="0" y="0" width="100%" height="100%" fill="#1B7340" v-bind:fill-opacity="opacity"/>
 
-    <g>
+    <g style="transform-origin: 500px 17.5px;" v-bind:style="{ 'transform': 'scale(' + Math.min(775 / (17.5 + 260 * title.length), (1200 - 100) / Math.max(...title.map(line => textInfo(line.toUpperCase(), { fontFamily: 'Jost', fontSize: '200px'}).width + 60))) + ')' }" v-bind:data-scale="500 / (17.5 + 260 * title.length)">
       <g v-for="line in title">
 
-        <rect v-bind:x="(1200 - (textInfo(line.toUpperCase(), { fontFamily: 'Jost', fontSize: '200px'}).width + 60)) / 2" v-bind:y="17.5 + 260 * (title.indexOf(line) + 0)" v-bind:height="textInfo(line.toUpperCase(), { fontFamily: 'Jost', fontSize: '200px' }).height - 50" fill="#1DA64A" v-bind:width="textInfo(line.toUpperCase(), { fontFamily: 'Jost', fontSize: '200px'}).width + 60" />
+        <rect v-bind:x="(1200 - (textInfo(line.toUpperCase(), { fontFamily: 'Jost', fontSize: '200px' }).width + 60)) / 2" v-bind:y="17.5 + 260 * (title.indexOf(line) + 0)" v-bind:height="textInfo(line.toUpperCase(), { fontFamily: 'Jost', fontSize: '200px' }).height - 50" fill="#1DA64A" v-bind:width="textInfo(line.toUpperCase(), { fontFamily: 'Jost', fontSize: '200px'}).width + 60"/>
 
-        <text alignment-baseline="middle" text-anchor="middle" x="600" fill="#fff" v-bind:y="35 + 130 + 260 * (title.indexOf(line) + 0)" style="font-size: 200px; font-family: 'Jost', 'Helvetica Neue';">
+        <text alignment-baseline="middle" text-anchor="middle" x="600" fill="#fff" v-bind:y="35 + 130 + 260 * (title.indexOf(line) + 0)"  style="transform-origin: 50% 17.5px; transform: scale(1); font-size: 200px; font-family: 'Jost', 'Helvetica Neue';" v-bind:style="{ 'font-size': '200px' }">
           {{ line }}
         </text>
 
       </g>
     </g>
+
+    <!--textLength='290' lengthAdjust="spacing" <text style="font-family: 'Jost'; font-size: 30vw; fill: #fff;" alignment-baseline="middle" text-anchor="middle" x="50%" y="50%">
+      Text
+    </text>-->
 
 
     <g>

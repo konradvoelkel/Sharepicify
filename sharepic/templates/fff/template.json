@@ -98,6 +98,19 @@
       }
     },
     {
+      "type": "number",
+      "description": "Title Size",
+      "key": "titleScale",
+      "default": 1,
+      "properties": {
+        "value": 1,
+        "max": 2,
+        "min": 0.1,
+        "kind": "slider",
+        "step": 0.1
+      }
+    },
+    {
       "type": "text",
       "description": "Subtitle",
       "key": "subtitle",

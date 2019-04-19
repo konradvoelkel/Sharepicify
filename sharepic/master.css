@@ -256,6 +256,12 @@ body::-webkit-scrollbar {
   width: auto;
   white-space: nowrap;
 }
+.test-text-fit {
+  position: absolute;
+  left: 200%;
+  top: 200%;
+
+}
 #render-canvas {
   position: fixed;
   left: 0px;
