@@ -13,7 +13,7 @@
       {{ subtitle }}
     </text>
 
-    <g style="transform-origin: 500px 500px;" v-bind:style="{ 'transform': 'scale(' + Math.min(700 / ((200 * title.length) + 125), (1200 - 200) / (Math.max(...title.map(line => textInfo(line.toUpperCase(), { fontFamily: 'Jost', fontSize: '200px'}).width)) + 200)) + ')' }">
+    <g style="transform-origin: 50% 50%;" v-bind:style="{ 'transform': 'scale(' + Math.min(700 / ((200 * title.length) + 125), (1200 - 200) / (Math.max(...title.map(line => textInfo(line.toUpperCase(), { fontFamily: 'Jost', fontSize: '200px'}).width)) + 200)) + ')' }">
       <g>
         <g v-for="line in title">
           <text text-anchor="middle" x="600" fill="#fff" v-bind:y="((600 - (200 * title.length) / 2) + 25) + (title.indexOf(line) * 200) + 110" style="font-size: 200px; font-family: 'Jost-900-Black', 'Helvetica Neue';">

@@ -395,21 +395,34 @@
         {{ char.char }}
       </text>-->
 
-      <text v-bind:transform="'rotate(' + (-110 + textInfo(title, { fontFamily: 'Jost', fontSize: '150px' }).width / 17.5) + ', 750, 750)'">
-        <textPath alignment-baseline="middle" text-anchor="middles" xlink:href="#circlePath" style="font-family: 'Jost', 'Helvetica Neue'; font-size: 180px;">
+      <text v-bind:transform="'rotate(' + (-125 + textInfo(title, { fontFamily: 'Jost', fontSize: ([ { max: 1500, value: 180 }, { max: 1700, value: 160 }, { max: 1870, value: 130 }, { max: 2050, value: 120 }, { max: 2385, value: 110 }, { max: 2650, value: 100 }, { max: 2840, value: 90 }, { max: Infinity, value: 80 } ].filter(record => textInfo(title, { fontFamily: 'Merriweather', fontSize: '180px' }).width <= record.max)[0].value) + 'px' }).width / 17.5) + ', 750, 750)'" v-bind:data-size="textInfo(title, { fontFamily: 'Merriweather', fontSize: '180px' }).width" v-bind:data-length="textInfo(title, { fontFamily: 'Merriweather', fontSize: '180px' }).width">
+        <textPath alignment-baseline="middle" text-anchor="middles" xlink:href="#circlePath" style="font-family: 'Jost', 'Helvetica Neue'; font-size: 180px;" v-bind:style="{ 'font-size': ([ { max: 1500, value: 180 }, { max: 1700, value: 160 }, { max: 1870, value: 130 }, { max: 2050, value: 120 }, { max: 2385, value: 110 }, { max: 2650, value: 100 }, { max: 2840, value: 90 }, { max: Infinity, value: 80 } ].filter(record => textInfo(title, { fontFamily: 'Merriweather', fontSize: '180px' }).width <= record.max)[0].value) + 'px' }">
           {{ title }}
         </textPath>
       </text>
 
+      <g v-if="description.length > 0">
+        <g v-if="descriptionMode == 0" v-dynamic data-dynamic-origin="none" data-dynamic-width="800" data-dynamic-height="800" style="transform-origin: 50% 50%;">
+          <rect transform="rotate(-40, 750, 750)" v-bind:x="750 - ((textInfo(description, { fontFamily: 'Merriweather', fontSize: '130px' }).width + 30) / 2)" y="634" v-bind:width="textInfo(description, { fontFamily: 'Merriweather', fontSize: '130px' }).width + 30" height="200"/>
+          <text x="50%" y="50%" transform="rotate(-40, 750, 750)" alignment-baseline="middle" text-anchor="middle" style="fill: #fff; font-size: 130px; font-family: 'Merriweather';">
+            {{ description }}
+          </text>
+        </g>
 
-      <g v-if="description.length > 0" style="transform-origin: 600px 600px;" v-bind:style="{ 'transform': 'scale(' + Math.min(500 / textInfo(description, { fontFamily: 'Merriweather', fontSize: '150px' }).height, 1000 / textInfo(description, { fontFamily: 'Merriweather', fontSize: '150px' }).width) + ')' }">
-        <rect transform="rotate(-40, 750, 750)" v-bind:x="750 - (textInfo(description, { fontFamily: 'Merriweather', fontSize: '150px' }).width / 2)" y="600" v-bind:width="textInfo(description, { fontFamily: 'Merriweather', fontSize: '150px' }).width" height="200"/>
-        <text x="50%" y="50%" transform="rotate(-40, 750, 750)" alignment-baseöine="middle" text-anchor="middle" style="fill: #fff; font-size: 130px; font-family: 'Merriweather';">
-          {{ description }}
-        </text>
+        <g v-if="descriptionMode == 1" v-dynamic data-dynamic-origin="none" data-dynamic-width="1100" data-dynamic-height="500" style="transform-origin: 50% 50%;">
+          <rect fill="none" v-bind:x="750 - ((textInfo(description, { fontFamily: 'Merriweather', fontSize: '130px' }).width + 30) / 2)" y="636" v-bind:width="textInfo(description, { fontFamily: 'Merriweather', fontSize: '130px' }).width + 30" height="200"/>
+          <text x="50%" y="50%" alignment-baseline="middle" text-anchor="middle" style="fill: #000; font-size: 130px; font-family: 'Jost';">
+            {{ description }}
+          </text>
+        </g>
       </g>
 
-
+      <!--<g v-dynamic data-dynamic-origin="0% 0%" data-dynamic-width="1000" data-dynamic-height="1000">
+        <rect x="100" y="100" width="500" height="500" style="fill: #f00;" />
+        <text x="100" y="100" alignment-baseline="hanging" style="fill: #fff; font-size: 100px; font-family: 'Helvetica Neue';">
+          Hallo Welt.
+        </text>
+      </g>-->
 
     </g>
 
