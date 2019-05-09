@@ -2,6 +2,53 @@
   outline: none;
 }
 
+
+@font-face {
+  font-family: "Josty";
+  src: url('../fonts/Jost/Jost-100-Hairline.ttf');
+  font-weight: 100;
+}
+@font-face {
+  font-family: "Josty";
+  src: url('../fonts/Jost/Jost-200-Thin.ttf');
+  font-weight: 200;
+}
+@font-face {
+  font-family: "Josty";
+  src: url('../fonts/Jost/Jost-300-Light.ttf');
+  font-weight: 300;
+}
+@font-face {
+  font-family: "Josty";
+  src: url('../fonts/Jost/Jost-400-Book.ttf');
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Josty";
+  src: url('../fonts/Jost/Jost-500-Medium.ttf');
+  font-weight: 500;
+}
+@font-face {
+  font-family: "Josty";
+  src: url('../fonts/Jost/Jost-600-Semi.ttf');
+  font-weight: 600;
+}
+@font-face {
+  font-family: "Josty";
+  src: url('../fonts/Jost/Jost-700-Bold.ttf');
+  font-weight: 700;
+}
+@font-face {
+  font-family: "Josty";
+  src: url('../fonts/Jost/Jost-800-Heavy.ttf');
+  font-weight: 800;
+}
+@font-face {
+  font-family: "Josty";
+  src: url('../fonts/Jost/Jost-900-Black.ttf');
+  font-weight: 900;
+}
+
 .navigation {
   padding: 13px 0 0;
   font-family: "Helvetica Neue", "Helvetica", sans-serif;
@@ -82,14 +129,23 @@ body {
 body::-webkit-scrollbar {
   display: none;
 }
-
+.view {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
 .sharepic-app {
   display: flex;
   width: 100%;
-  height: 100vh;
-  height: calc(100vh - 5px);
   font-family: sans-serif;
+  flex: 1;
 }
+footer {
+  display: inline-block;
+  flex: none;
+}
+
+
 .sharepic-app .tools {
   flex: none;
   width: 300px;
@@ -169,10 +225,15 @@ body::-webkit-scrollbar {
 }
 .sharepic-app .tools li .label span {
   display: inline-block;
-  background-color: #1B7340;
+  font-family: 'Josty';
+  font-weight: 200;
+  letter-spacing: 1px;
+  color: #fff;
+  padding: 0 0 0 12px;
+  /*background-color: #1B7340;
   border-radius: 30px;
   color: #fff;
-  padding: 3px 12px;
+  padding: 3px 12px;*/
 }
 .sharepic-app .tools li .controls {
   margin-left: 10px;

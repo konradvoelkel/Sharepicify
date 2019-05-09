@@ -52,6 +52,26 @@
       }
     },
     {
+      "type": "selection",
+      "description": "Surface",
+      "key": "surface",
+      "default": 0,
+      "properties": {
+        "items": [
+          {
+            "type": "value",
+            "value": 0,
+            "render": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHZpZXdCb3g9IjAgMCAxMDAgMTAwIiB2ZXJzaW9uPSIxLjEiPgogIDxjaXJjbGUgY3g9IjUwJSIgY3k9IjUwJSIgcj0iNTAlIiBmaWxsPSIjMURBNjRBIiAvPgo8L3N2Zz4="
+          },
+          {
+            "type": "value",
+            "value": 1,
+            "render": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHZpZXdCb3g9IjAgMCAxMDAgMTAwIiB2ZXJzaW9uPSIxLjEiPgogIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiMxREE2NEEiIC8+Cjwvc3ZnPg=="
+          }
+        ]
+      }
+    },
+    {
       "type": "line",
       "description": "Description",
       "key": "description",

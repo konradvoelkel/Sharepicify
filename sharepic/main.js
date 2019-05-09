@@ -191,8 +191,6 @@ class PicCreator {
         update: function (el, binding) {
           setTimeout(() => {
 
-
-
             const width = el.getAttributeNS(null, "data-dynamic-width");
             const height = el.getAttributeNS(null, "data-dynamic-height");
 
@@ -204,7 +202,7 @@ class PicCreator {
               y: height / bounding.height
             };
 
-            console.log(el, bounding.width, bounding.height);
+            //console.log(el, bounding.width, bounding.height);
 
             // Scale to smaller scale (to prevent oversizing)
             el.style.transform = 'scale(' + Math.min(scales.x, scales.y) + ')';
