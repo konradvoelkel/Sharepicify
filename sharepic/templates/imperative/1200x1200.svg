@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+
+     viewBox="0 0 1200 1200"
+     version="1.1">
+
+  <g class="main">
+
+    <defs>
+      <filter id="dropshadow" height="160%" width="160%">
+        <feGaussianBlur in="SourceAlpha" stdDeviation="15"/> <!-- stdDeviation is how much to blur -->
+        <feOffset dx="0" dy="0" result="offsetblur"/> <!-- how much to offset -->
+        <feComponentTransfer>
+          <feFuncA type="linear" slope="0.9"/> <!-- slope is the opacity of the shadow -->
+        </feComponentTransfer>
+        <feMerge>
+          <feMergeNode/> <!-- this contains the offset blurred image -->
+          <feMergeNode in="SourceGraphic"/> <!-- this contains the element that the filter is applied to -->
+        </feMerge>
+      </filter>
+    </defs>
+
+    <rect x="0" y="0" width="1200" height="1200" style="fill: #eeeeee;" />
+
+    <image v-if="typeof backgroundImage == 'object'" v-bind:xlink:href="backgroundImage.value" v-fitimage v-bind:data-image-pos="pos" style="transform-origin: 50% 50%;" />
+
+    <g style="transform-origin: 600px 290px; transform: rotate(-4deg);">
+      <multiline-text v-dynamic data-dynamic-origin="none" data-dynamic-width="1120" data-dynamic-height="500" style="transform-origin: 40px 50px;" x="40" y="50" padding="10 20" v-bind:text="text" lineheight="1.05" background="#1DA64A" css="font-size: 150px; font-family: 'Jost-600'; fill: #fff;"></multiline-text>
+    </g>
+
+    <path style="fill: #1DA64A;" d="M 0,925 l 1200,175 L 1200,1200 0,1200" />
+
+    <path style="fill: #1B7340;" d="M 0,910 l 1200,182.5 0,12.5 L 0,940" />
+
+    <g>
+      <multiline-text v-dynamic data-dynamic-origin="none" data-dynamic-width="700" data-dynamic-height="190" style="transform-origin: 30px 1170px;" x="30" y="-5" padding="0" v-bind:text="description" lineheight="1.1" background="none" css="font-size: 80px; font-family: 'Jost-300'; fill: #fff;"></multiline-text>
+    </g>
+
+    <image v-bind:xlink:href="typeof logo == 'object' ? logo.value : logo" x="1000" y="1000" height="300" width="300" filter="url(#dropshadow)" />
+
+
+  </g>
+
+
+</svg>

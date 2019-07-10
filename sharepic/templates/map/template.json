@@ -1,0 +1,125 @@
+{
+  "name": "Map",
+  "root": "https://toolpic.fridaysforfuture.de/sharepic/templates/map/template.json",
+  "preview": "sharepic/templates/map/preview.jpg",
+  "documents": [
+    {
+      "width": 1200,
+      "height": 1200,
+      "src": "sharepic/templates/map/1200x1200.svg",
+      "alias": "Facebook, Instagram"
+    },
+    {
+      "width": 1200,
+      "height": 675,
+      "src": "sharepic/templates/map/1200x675.svg",
+      "alias": "Twitter"
+    }
+  ],
+  "fonts": [
+    {
+      "name": "Jost",
+      "src": "fonts/Jost/Jost-600-Semi.ttf",
+      "mime": "font/truetype"
+    },
+    {
+      "name": "Jost-400",
+      "src": "fonts/Jost/Jost-400-Book.ttf",
+      "mime": "font/truetype"
+    },
+    {
+      "name": "Jost-300",
+      "src": "fonts/Jost/Jost-300-Light.ttf",
+      "mime": "font/truetype"
+    },
+    {
+      "name": "Jost-700",
+      "src": "fonts/Jost/Jost-700-Bold.ttf",
+      "mime": "font/truetype"
+    },
+    {
+      "name": "Jost-500",
+      "src": "fonts/Jost/Jost-500-Medium.ttf",
+      "mime": "font/truetype"
+    }
+  ],
+  "fields": [
+    {
+      "type": "map",
+      "description": "Route",
+      "key": "route",
+      "default": "sharepic/templates/map/bg.jpg",
+      "properties": {
+        "center": {
+          "latitude": 50.0035,
+          "longitude": 8.27,
+          "zoom": 1
+        }
+      }
+    },
+    {
+      "type": "number",
+      "description": "Position",
+      "key": "pos",
+      "default": 0,
+      "properties": {
+        "value": 0,
+        "max": 1,
+        "min": -1,
+        "step": 0.05,
+        "kind": "slider"
+      }
+    },
+    {
+      "type": "line",
+      "description": "Location",
+      "key": "location",
+      "default": "Bahnhofsplatz",
+      "properties": {
+
+      }
+    },
+    {
+      "type": "line",
+      "description": "Location detail",
+      "key": "locationdetail",
+      "default": "Mainz",
+      "properties": {
+
+      }
+    },
+    {
+      "type": "line",
+      "description": "Date",
+      "key": "date",
+      "default": "05. Juli | 20 UHR",
+      "properties": {
+
+      }
+    },
+    {
+      "type": "selection",
+      "description": "Logo",
+      "key": "logo",
+      "properties": {
+        "items": [
+          {
+            "type": "value",
+            "value": "sharepic/resources/logo.svg"
+          },
+          {
+            "type": "value",
+            "value": "sharepic/resources/logo-2.svg"
+          },
+          {
+            "type": "value",
+            "value": "sharepic/resources/logo-3.svg"
+          },
+          {
+            "type": "file"
+          }
+        ]
+      }
+    }
+  ]
+}

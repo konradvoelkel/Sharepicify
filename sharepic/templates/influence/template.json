@@ -1,0 +1,103 @@
+{
+  "name": "Influence",
+  "root": "https://toolpic.fridaysforfuture.de/sharepic/templates/influence/template.json",
+  "preview": "sharepic/templates/influence/preview.jpg",
+  "documents": [
+    {
+      "width": 1200,
+      "height": 1200,
+      "src": "sharepic/templates/influence/1200x1200.svg",
+      "alias": "Facebook, Instagram"
+    },
+    {
+      "width": 1200,
+      "height": 675,
+      "src": "sharepic/templates/influence/1200x675.svg",
+      "alias": "Twitter"
+    }
+  ],
+  "fonts": [
+    {
+      "name": "Jost",
+      "src": "fonts/Jost/Jost-600-Semi.ttf",
+      "mime": "font/truetype"
+    },
+    {
+      "name": "Jost-500",
+      "src": "fonts/Jost/Jost-500-Medium.ttf",
+      "mime": "font/truetype"
+    }
+  ],
+  "fields": [
+    {
+      "type": "selection",
+      "description": "Background",
+      "key": "backgroundImage",
+      "default": {
+        "value": "sharepic/templates/influence/bg.jpg"
+      },
+      "properties": {
+        "items": [
+          {
+            "type": "file"
+          }
+        ]
+      }
+    },
+    {
+      "type": "number",
+      "description": "Position",
+      "key": "pos",
+      "default": 0,
+      "properties": {
+        "value": 0,
+        "max": 1,
+        "min": -1,
+        "step": 0.05,
+        "kind": "slider"
+      }
+    },
+    {
+      "type": "text",
+      "description": "Title",
+      "key": "title",
+      "default": ["HANDELT", "EINFACH!", "DANKE!"],
+      "properties": {
+
+      }
+    },
+    {
+      "type": "line",
+      "description": "Subtitle",
+      "key": "subtitle",
+      "default": "#wirstreikenbisihrhandelt",
+      "properties": {
+
+      }
+    },
+    {
+      "type": "selection",
+      "description": "Logo",
+      "key": "logo",
+      "properties": {
+        "items": [
+          {
+            "type": "value",
+            "value": "sharepic/resources/logo.svg"
+          },
+          {
+            "type": "value",
+            "value": "sharepic/resources/logo-2.svg"
+          },
+          {
+            "type": "value",
+            "value": "sharepic/resources/logo-3.svg"
+          },
+          {
+            "type": "file"
+          }
+        ]
+      }
+    }
+  ]
+}

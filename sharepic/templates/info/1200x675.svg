@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+
+     viewBox="0 0 1200 675"
+     version="1.1">
+
+
+
+  <g class="main">
+
+    <rect x="0" y="0" width="100%" height="100%" style="fill: #fff;"/>
+
+    <g v-dynamic data-dynamic-origin="none" data-dynamic-width="1100" data-dynamic-height="50" style="transform-origin: 50px 50px;">
+      <text style="font-size: 95px; font-family: 'Jost'; fill: #1B7340;" x="50" y="50" alignment-baseline="hanging">
+        {{ subtitle }}
+      </text>
+    </g>
+
+    <!--
+
+      500 / (180 + (textInfo(line.toUpperCase(), { fontFamily: 'Jost', fontSize: '150px' }).height - 60) * title.length)
+
+    -->
+
+    <g v-dynamic data-dynamic-origin="none" data-dynamic-width="1100" data-dynamic-height="350" style="transform-origin: 50px 100px;">
+      <text style="font-size: 135px; font-family: 'Jost'; fill: #000;" x="50" v-bind:y="100 + (textInfo(line.toUpperCase(), { fontFamily: 'Jost', fontSize: '135px' }).height - 50) * title.indexOf(line)" alignment-baseline="hanging" v-for="line in title">
+        {{ line }}
+      </text>
+    </g>
+
+    <g v-dynamic data-dynamic-origin="none" data-dynamic-width="950" data-dynamic-height="100" style="transform-origin: 1150px 500px;">
+      <text y="500" x="1150" style="font-size: 35px; font-family: 'Jost';" text-anchor="end" alignment-baseline="middle">
+        {{ description }}
+      </text>
+    </g>
+
+    <g v-dynamic data-dynamic-origin="none" data-dynamic-width="800" data-dynamic-height="100" style="transform-origin: 50px 600px;">
+      <text style="font-size: 95px; font-family: 'Jost'; fill: #1B7340;" x="50" y="600" text-anchor="start" alignment-baseline="middle">
+        {{ organisation }}
+      </text>
+    </g>
+
+    <image v-bind:xlink:href="typeof logo == 'object' ? logo.value : logo" x="1065" y="540" height="120" width="120" />
+
+  </g>
+
+
+</svg>

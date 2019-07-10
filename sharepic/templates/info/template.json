@@ -1,11 +1,25 @@
 {
   "name": "Info",
-  "preview": "sharepic/templates/info/preview.png",
-  "document": "sharepic/templates/info/document.svg",
+  "root": "https://toolpic.fridaysforfuture.de/sharepic/templates/info/template.json",
+  "preview": "sharepic/templates/info/preview.jpg",
+  "documents": [
+    {
+      "width": 1200,
+      "height": 1200,
+      "src": "sharepic/templates/info/1200x1200.svg",
+      "alias": "Facebook, Instagram"
+    },
+    {
+      "width": 1200,
+      "height": 675,
+      "src": "sharepic/templates/info/1200x675.svg",
+      "alias": "Twitter"
+    }
+  ],
   "fonts": [
     {
       "name": "Jost",
-      "src": "fonts/jost.ttf",
+      "src": "fonts/Jost/Jost-600-Semi.ttf",
       "mime": "font/truetype"
     },
     {

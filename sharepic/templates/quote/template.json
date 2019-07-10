@@ -1,0 +1,135 @@
+{
+  "name": "Long quote",
+  "root": "https://toolpic.fridaysforfuture.de/sharepic/templates/quote/template.json",
+  "preview": "sharepic/templates/quote/preview.jpg",
+  "documents": [
+    {
+      "width": 1200,
+      "height": 1200,
+      "src": "sharepic/templates/quote/1200x1200.svg",
+      "alias": "Facebook, Instagram"
+    },
+    {
+      "width": 1200,
+      "height": 675,
+      "src": "sharepic/templates/quote/1200x675.svg",
+      "alias": "Twitter"
+    }
+  ],
+  "fonts": [
+    {
+      "name": "Jost-600",
+      "src": "fonts/Jost/Jost-600-Semi.ttf",
+      "mime": "font/truetype"
+    },
+    {
+      "name": "Jost-400",
+      "src": "fonts/Jost/Jost-400-Book.ttf",
+      "mime": "font/truetype"
+    }
+  ],
+  "fields": [
+    {
+      "type": "selection",
+      "description": "Background",
+      "key": "backgroundImage",
+      "default": {
+        "value": "sharepic/templates/quote/bg.jpg"
+      },
+      "properties": {
+        "items": [
+          {
+            "type": "file"
+          }
+        ]
+      }
+    },
+    {
+      "type": "checklist",
+      "description": "Effekte",
+      "key": "effects",
+      "default": [true],
+      "properties": {
+        "fields": [
+          "Schwarz/Weiß"
+        ]
+      }
+    },
+    {
+      "type": "number",
+      "description": "Position",
+      "key": "pos",
+      "default": 0,
+      "properties": {
+        "value": 0,
+        "max": 1,
+        "min": -1,
+        "step": 0.05,
+        "kind": "slider"
+      }
+    },
+    {
+      "type": "dynamic-text",
+      "description": "Text",
+      "key": "text",
+      "default": ["“Wir danken Frau Dreyer für die Iniative,",
+                "mit uns in den Dialog zu treten, sind",
+                "allerdings von den Ergebnissen enttäuscht.",
+                "Wir hatten leider den Eindruck, dass sich",
+                "das Interesse von Fraun Dreyer darauf",
+                "beschränkte, ein paar nette Wort zu wechseln.",
+                "Einen ernstgemeinten Versuch, unsere",
+                "Forderungen aus den Wänden der Staatskanzlei",
+                "hinaus in die Klimapolitik der Landesregierung",
+                "fließen zu lassen oder sie dort auch nur zu",
+                "diskutieren, haben wir schmerzlich vermisst.”"
+              ],
+      "properties": {
+        "charWidth": 0.25,
+        "formats": [1, 0.44]
+      }
+    },
+    {
+      "type": "line",
+      "description": "Author",
+      "key": "author",
+      "default": "FFF-Mitorganisator*innen",
+      "properties": {
+
+      }
+    },
+    {
+      "type": "text",
+      "description": "Author detail",
+      "key": "authordetail",
+      "default": ["nach Gespräch mit Ministerpräsidentin", "Malu Dreyer"],
+      "properties": {
+
+      }
+    },
+    {
+      "type": "selection",
+      "description": "Logo",
+      "key": "logo",
+      "properties": {
+        "items": [
+          {
+            "type": "value",
+            "value": "sharepic/resources/logo-2.svg"
+          },
+          {
+            "type": "value",
+            "value": "sharepic/resources/logo.svg"
+          },
+          {
+            "type": "value",
+            "value": "sharepic/resources/logo-3.svg"
+          },
+          {
+            "type": "file"
+          }
+        ]
+      }
+    }
+  ]
+}

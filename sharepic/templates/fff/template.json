@@ -1,11 +1,30 @@
 {
   "name": "Quote",
+  "root": "https://toolpic.fridaysforfuture.de/sharepic/templates/fff/template.json",
   "preview": "sharepic/templates/fff/preview.jpg",
-  "document": "sharepic/templates/fff/document.svg",
+  "documents": [
+    {
+      "width": 1200,
+      "height": 1200,
+      "src": "sharepic/templates/fff/1200x1200.svg",
+      "alias": "Facebook, Instagram"
+    },
+    {
+      "width": 1200,
+      "height": 675,
+      "src": "sharepic/templates/fff/1200x675.svg",
+      "alias": "Twitter"
+    }
+  ],
   "fonts": [
     {
       "name": "Jost",
-      "src": "fonts/jost.ttf",
+      "src": "fonts/Jost/Jost-600-Semi.ttf",
+      "mime": "font/truetype"
+    },
+    {
+      "name": "Jost-400",
+      "src": "fonts/Jost/Jost-400-Book.ttf",
       "mime": "font/truetype"
     },
     {
@@ -20,10 +39,7 @@
       "description": "Background",
       "key": "backgroundImage",
       "default": {
-        "value": "sharepic/templates/fff/default.jpg",
-        "info": {
-          "ratio": 1
-        }
+        "value": "sharepic/templates/fff/default.jpg"
       },
       "properties": {
         "items": [
@@ -70,22 +86,10 @@
       "default": 0,
       "properties": {
         "value": 0,
-        "max": 100,
-        "min": 0,
-        "kind": "slider"
-      }
-    },
-    {
-      "type": "number",
-      "description": "Opacity",
-      "key": "opacity",
-      "default": 0.85,
-      "properties": {
-        "value": 0.85,
         "max": 1,
-        "min": 0,
-        "kind": "slider",
-        "step": 0.01
+        "min": -1,
+        "step": 0.05,
+        "kind": "slider"
       }
     },
     {

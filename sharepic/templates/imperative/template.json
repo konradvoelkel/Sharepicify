@@ -1,0 +1,96 @@
+{
+  "name": "Imperative",
+  "root": "https://toolpic.fridaysforfuture.de/sharepic/templates/imperative/template.json",
+  "preview": "sharepic/templates/imperative/preview.jpg",
+  "documents": [
+    {
+      "width": 1200,
+      "height": 1200,
+      "src": "sharepic/templates/imperative/1200x1200.svg",
+      "alias": "Facebook, Instagram"
+    },
+    {
+      "width": 1200,
+      "height": 675,
+      "src": "sharepic/templates/imperative/1200x675.svg",
+      "alias": "Twitter"
+    }
+  ],
+  "fonts": [
+    {
+      "name": "Jost-300",
+      "src": "fonts/Jost/Jost-400-Book.ttf",
+      "mime": "font/truetype"
+    },
+    {
+      "name": "Jost-600",
+      "src": "fonts/Jost/Jost-600-Semi.ttf",
+      "mime": "font/truetype"
+    }
+  ],
+  "fields": [
+    {
+      "type": "selection",
+      "description": "Background",
+      "key": "backgroundImage",
+      "default": {
+        "value": "sharepic/templates/imperative/bg.jpg"
+      },
+      "properties": {
+        "items": [
+          {
+            "type": "file"
+          }
+        ]
+      }
+    },
+    {
+      "type": "number",
+      "description": "Position",
+      "key": "pos",
+      "default": 0,
+      "properties": {
+        "value": 0,
+        "max": 1,
+        "min": -1,
+        "step": 0.05,
+        "kind": "slider"
+      }
+    },
+    {
+      "type": "text",
+      "description": "Text",
+      "key": "text",
+      "default": ["BUNDESTAG", "UMZINGELN!"],
+      "properties": {
+
+      }
+    },
+    {
+      "type": "text",
+      "description": "Description",
+      "key": "description",
+      "default": ["28.06 12:00 Uhr", "INVALIDENPARK"],
+      "properties": {
+
+      }
+    },
+    {
+      "type": "selection",
+      "description": "Logo",
+      "key": "logo",
+      "properties": {
+        "items": [
+          {
+            "type": "value",
+            "value": "sharepic/resources/logo-2.svg"
+          },
+          {
+            "type": "value",
+            "value": "sharepic/resources/logo.svg"
+          }
+        ]
+      }
+    }
+  ]
+}

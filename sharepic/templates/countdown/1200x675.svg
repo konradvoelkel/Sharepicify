@@ -1,0 +1,235 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+
+     viewBox="0 0 1200 675"
+     version="1.1">
+
+
+  <defs>
+    <path d="M736.75,893.075c109.517,-45.067 127.357,-153.57 97.9,-226.475" style="fill: none; stroke: #f00; stroke-width: 3px;" id="path3" />
+    <path d="M 740,893 l 0,-550" style="fill: none; stroke: #f00; stroke-width: 3px;" id="path1" />
+    <path d="M649,733c174.484,-128.935 217.898,-208.333 175,-320" style="fill: none; stroke: #f00; stroke-width: 3px;" id="path2" />
+    <path d="M 779,653 l 0,-310" style="fill: none; stroke: #f00; stroke-width: 3px;" id="path4" />
+    <path d="M632,916c130.26,-21.611 203.445,-74.769 217,-193c12.316,-147.093 -93.343,-240.106 -238,-218" style="fill: none; stroke: #f00; stroke-width: 3px;" id="path5" />
+    <path d="M703,908c96.719,-34.497 148.164,-107.875 151,-223c-5.745,-106.335 -59.601,-171.757 -156,-201" style="fill: none; stroke: #f00; stroke-width: 3px;" id="path6" />
+    <path d="M 595,869 L 852,320" style="fill: none; stroke: #f00; stroke-width: 3px;" id="path7" />
+    <path d="M685,906 c89.305,-26.831 138.94,-85.652 147,-178c-5.114,-65.366 -32.381,-119.32 -99,-153c52.396,-32.434 77.954,-78.635 72,-141" style="fill: none; stroke: #f00; stroke-width: 3px;" id="path8" />
+    <path d="M 635,872 l148,-193c62.554,-68.175 87.325,-146.705 63,-244" style="fill: none; stroke: #f00; stroke-width: 3px;" id="path9" />
+    <path d="M 715,888 c143.511,-98.922 159.784,-253.53 118,-428" style="fill: none; stroke: #f00; stroke-width: 3px;" id="path0" />
+
+  </defs>
+
+
+  <g class="main">
+
+    <defs>
+      <clipPath id="mask-digit-1">
+        <text x="600" y="700" style="font-family: 'Jost-700'; font-size: 850; fill: #fff; alignment-baseline: middle; text-anchor: middle;">1</text>
+        <!--<path d="M440.475,471.7l147.9,-35.7l0,459l137.7,0l0,-606.05l-285.6,57.8l0,124.95Z" style="fill: #fff;"/>-->
+      </clipPath>
+      <clipPath id="mask-digit-2">
+        <text x="600" y="700" style="font-family: 'Jost-700'; font-size: 850; fill: #fff; alignment-baseline: middle; text-anchor: middle;">2</text>
+      </clipPath>
+      <clipPath id="mask-digit-3">
+        <text x="600" y="700" style="font-family: 'Jost-700'; font-size: 850; fill: #fff; alignment-baseline: middle; text-anchor: middle;">3</text>
+      </clipPath>
+      <clipPath id="mask-digit-4">
+        <text x="600" y="700" style="font-family: 'Jost-700'; font-size: 850; fill: #fff; alignment-baseline: middle; text-anchor: middle;">4</text>
+      </clipPath>
+      <clipPath id="mask-digit-5">
+        <text x="600" y="700" style="font-family: 'Jost-700'; font-size: 850; fill: #fff; alignment-baseline: middle; text-anchor: middle;">5</text>
+      </clipPath>
+      <clipPath id="mask-digit-6">
+        <text x="600" y="700" style="font-family: 'Jost-700'; font-size: 850; fill: #fff; alignment-baseline: middle; text-anchor: middle;">6</text>
+      </clipPath>
+      <clipPath id="mask-digit-7">
+        <text x="600" y="700" style="font-family: 'Jost-700'; font-size: 850; fill: #fff; alignment-baseline: middle; text-anchor: middle;">7</text>
+      </clipPath>
+      <clipPath id="mask-digit-8">
+        <text x="600" y="700" style="font-family: 'Jost-700'; font-size: 850; fill: #fff; alignment-baseline: middle; text-anchor: middle;">8</text>
+      </clipPath>
+      <clipPath id="mask-digit-9">
+        <text x="600" y="700" style="font-family: 'Jost-700'; font-size: 850; fill: #fff; alignment-baseline: middle; text-anchor: middle;">9</text>
+      </clipPath>
+      <clipPath id="mask-digit-0">
+        <text x="600" y="700" style="font-family: 'Jost-700'; font-size: 850; fill: #fff; alignment-baseline: middle; text-anchor: middle;">0</text>
+      </clipPath>
+
+    </defs>
+
+    <rect x="0" y="0" width="100%" height="100%" style="fill: #1DA64A;" />
+
+    <g style="tranform-origin: 600px 600px; transform: scale(0.7) translate(257px, -100px);">
+      <g v-bind:style="{ transform: 'translate(' + ((getDigits(countdown).length * 550) / 2 - 275) + 'px, 0px)' }">
+        <g v-for="digit in getDigits(countdown).reverse()" v-bind:style="{ transform: 'translate(' + (digit.index * -550) + 'px, 0px)' }">
+          <g v-if="digit.digit == 1">
+            <path d="M 727,289 l 1200,800 -138,607 -1202,-800 52,-291 -200,-133" style="fill: #188F3F;"/>
+            <rect x="0" y="0" width="1200" height="1200" style="fill: #fff;" clip-path="url(#mask-digit-1)" />
+
+            <g v-bind:clip-path="'url(#mask-digit-1)'">
+              <g v-for="index in 30">
+                <text x="10" v-bind:y="2 + index * 35" alignment-baseline="hanging" style="fill: #000; opacity: 0.1; font-family: 'Jost-600'; font-size: 30px;">
+                  {{ shadertext }}
+                </text>
+              </g>
+            </g>
+          </g>
+
+          <g v-if="digit.digit == 2">
+            <path d="M 745,327 l 12000,8000 0,500 -12410,-7932 L 338,895 617,667 363,520 l 100,-100" style="fill: #188F3F;"/>
+            <rect x="0" y="0" width="1200" height="1200" style="fill: #fff;" clip-path="url(#mask-digit-2)" />
+
+            <g v-bind:clip-path="'url(#mask-digit-2)'">
+              <g v-for="index in 30">
+                <text x="10" v-bind:y="2 + index * 35" alignment-baseline="hanging" style="fill: #000; opacity: 0.1; font-family: 'Jost-600'; font-size: 30px;">
+                  {{ shadertext }}
+                </text>
+              </g>
+            </g>
+          </g>
+
+
+          <g v-if="digit.digit == 3">
+            <path d="M 748,323 l 12000,8000 L 12476,8878 473,878 517,707 717,840 719,735 565,635 622,621 398,474" style="fill: #188F3F;"/>
+            <rect x="0" y="0" width="1200" height="1200" style="fill: #fff;" clip-path="url(#mask-digit-3)" />
+
+            <g v-bind:clip-path="'url(#mask-digit-3)'">
+              <g v-for="index in 30">
+                <text x="10" v-bind:y="2 + index * 35" alignment-baseline="hanging" style="fill: #000; opacity: 0.1; font-family: 'Jost-600'; font-size: 30px;">
+                  {{ shadertext }}
+                </text>
+              </g>
+            </g>
+          </g>
+
+          <g v-if="digit.digit == 4">
+            <path d="M 766,299 l 12000,8000 L 12315,8790 313,790" style="fill: #188F3F;"/>
+            <rect x="0" y="0" width="1200" height="1200" style="fill: #fff;" clip-path="url(#mask-digit-4)" />
+
+            <g v-bind:clip-path="'url(#mask-digit-4)'">
+              <g v-for="index in 30">
+                <text x="10" v-bind:y="2 + index * 35" alignment-baseline="hanging" style="fill: #000; opacity: 0.1; font-family: 'Jost-600'; font-size: 30px;">
+                  {{ shadertext }}
+                </text>
+              </g>
+            </g>
+          </g>
+
+
+          <g v-if="digit.digit == 5">
+            <path d="M 827,300 l 12000,8000 L 12361,8829 358,829 701,842 398,644 l 100,-300" style="fill: #188F3F;"/>
+            <rect x="0" y="0" width="1200" height="1200" style="fill: #fff;" clip-path="url(#mask-digit-5)" />
+
+            <g v-bind:clip-path="'url(#mask-digit-5)'">
+              <g v-for="index in 30">
+                <text x="10" v-bind:y="2 + index * 35" alignment-baseline="hanging" style="fill: #000; opacity: 0.1; font-family: 'Jost-600'; font-size: 30px;">
+                  {{ shadertext }}
+                </text>
+              </g>
+            </g>
+          </g>
+
+          <g v-if="digit.digit == 6">
+            <path d="M 780,303 l 12000,8000 L 12454,8872 452,874 l -50,-300" style="fill: #188F3F;"/>
+            <rect x="0" y="0" width="1200" height="1200" style="fill: #fff;" clip-path="url(#mask-digit-6)" />
+
+            <g v-bind:clip-path="'url(#mask-digit-6)'">
+              <g v-for="index in 30">
+                <text x="10" v-bind:y="2 + index * 35" alignment-baseline="hanging" style="fill: #000; opacity: 0.1; font-family: 'Jost-600'; font-size: 30px;">
+                  {{ shadertext }}
+                </text>
+              </g>
+            </g>
+          </g>
+
+          <g v-if="digit.digit == 7">
+            <path d="M 854,300 l 12000,8000 L 12411,8895 409,897 668,634 366,436" style="fill: #188F3F;"/>
+            <rect x="0" y="0" width="1200" height="1200" style="fill: #fff;" clip-path="url(#mask-digit-7)" />
+
+            <g v-bind:clip-path="'url(#mask-digit-7)'">
+              <g v-for="index in 30">
+                <text x="10" v-bind:y="2 + index * 35" alignment-baseline="hanging" style="fill: #000; opacity: 0.1; font-family: 'Jost-600'; font-size: 30px;">
+                  {{ shadertext }}
+                </text>
+              </g>
+            </g>
+          </g>
+
+          <g v-if="digit.digit == 8">
+            <path d="M 731,320 l 12000,8000 L 12461,8873 461,873 l 50,-300 -50,-200" style="fill: #188F3F;"/>
+            <rect x="0" y="0" width="1200" height="1200" style="fill: #fff;" clip-path="url(#mask-digit-8)" />
+
+            <g v-bind:clip-path="'url(#mask-digit-8)'">
+              <g v-for="index in 30">
+                <text x="10" v-bind:y="2 + index * 35" alignment-baseline="hanging" style="fill: #000; opacity: 0.1; font-family: 'Jost-600'; font-size: 30px;">
+                  {{ shadertext }}
+                </text>
+              </g>
+            </g>
+          </g>
+
+          <g v-if="digit.digit == 9">
+            <path d="M 760,334 l 12000,8000 L 12420,8893 418,895 582,766 430,668 l 50,-300" style="fill: #188F3F;"/>
+            <rect x="0" y="0" width="1200" height="1200" style="fill: #fff;" clip-path="url(#mask-digit-9)" />
+
+            <g v-bind:clip-path="'url(#mask-digit-9)'">
+              <g v-for="index in 30">
+                <text x="10" v-bind:y="2 + index * 35" alignment-baseline="hanging" style="fill: #000; opacity: 0.1; font-family: 'Jost-600'; font-size: 30px;">
+                  {{ shadertext }}
+                </text>
+              </g>
+            </g>
+          </g>
+
+          <g v-if="digit.digit == 0">
+            <path d="M 726,322 l 12000,8000 L 12476,8874 474,876 l -50,-400" style="fill: #188F3F;"/>
+            <rect x="0" y="0" width="1200" height="1200" style="fill: #fff;" clip-path="url(#mask-digit-0)" />
+
+            <g v-bind:clip-path="'url(#mask-digit-0)'">
+              <g v-for="index in 30">
+                <text x="10" v-bind:y="2 + index * 35" alignment-baseline="hanging" style="fill: #000; opacity: 0.1; font-family: 'Jost-600'; font-size: 30px;">
+                  {{ shadertext }}
+                </text>
+              </g>
+            </g>
+          </g>
+
+        </g>
+      </g>
+
+      <g v-bind:style="{ transform: 'translate(' + ((getDigits(countdown).length * 550) / 2 - 275) + 'px, 0px)' }">
+        <text>
+          <textPath alignment-baseline="hanging" text-anchor="start" v-bind:xlink:href="'#path' + getDigits(countdown)[0].digit" style="fill: #90D3ED; font-family: 'Jost-600'; font-size: 30px;">
+            {{ descritpion }}
+          </textPath>
+        </text>
+      </g>
+    </g>
+
+
+
+    <g style="tranform-origin: 1200px 90px; transform: rotate(2deg);">
+      <multiline-text v-dynamic data-dynamic-origin="100% 90px" data-dynamic-width="550" data-dynamic-height="100" x="-15" y="0" align="right" padding="25 55" v-bind:text="[info2]" lineheight="1.2" background="#fff" css="font-size: 80px; font-family: 'Jost-600'; fill: #90D3ED;"></multiline-text>
+    </g>
+
+    <g style="tranform-origin: 0px 150px; transform: rotate(-3deg);">
+      <multiline-text v-dynamic data-dynamic-width="550" data-dynamic-height="100" x="-55" y="50" align="left" padding="25 55" v-bind:text="[info1]" lineheight="1.2" background="#fff" css="font-size: 80px; font-family: 'Jost-600'; fill: #90D3ED;"></multiline-text>
+    </g>
+
+    <g>
+      <g>
+        <rect x="0" y="615" width="100%" height="60px" style="fill: #1B7340;"/>
+      </g>
+
+      <g v-dynamic data-dynamic-width="800" data-dynamic-height="50" style="transform-origin: 50% 650px;">
+        <text x="50%" y="650" style="text-anchor: middle; alignment-baseline: middle; font-size: 40px; font-family: 'Jost-400'; fill: #fff;">
+          {{ subtitle }}
+        </text>
+      </g>
+    </g>
+
+    <image v-bind:xlink:href="typeof logo == 'object' ? logo.value : logo" x="25" y="540" height="120" width="120" />
+  </g>
+
+
+</svg>

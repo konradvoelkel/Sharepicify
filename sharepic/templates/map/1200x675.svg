@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+
+     viewBox="0 0 1200 675"
+     version="1.1">
+
+     <defs>
+       <filter id="dropshadow" height="130%">
+         <feGaussianBlur in="SourceAlpha" stdDeviation="7"/> <!-- stdDeviation is how much to blur -->
+         <feOffset dx="0" dy="10" result="offsetblur"/> <!-- how much to offset -->
+         <feComponentTransfer>
+           <feFuncA type="linear" slope="0.4"/> <!-- slope is the opacity of the shadow -->
+         </feComponentTransfer>
+         <feMerge>
+           <feMergeNode/> <!-- this contains the offset blurred image -->
+           <feMergeNode in="SourceGraphic"/> <!-- this contains the element that the filter is applied to -->
+         </feMerge>
+       </filter>
+
+       <filter id="dropshadow2" height="130%">
+         <feGaussianBlur in="SourceAlpha" stdDeviation="7"/> <!-- stdDeviation is how much to blur -->
+         <feOffset dx="0" dy="10" result="offsetblur"/> <!-- how much to offset -->
+         <feComponentTransfer>
+           <feFuncA type="linear" slope="0.2"/> <!-- slope is the opacity of the shadow -->
+         </feComponentTransfer>
+         <feMerge>
+           <feMergeNode/> <!-- this contains the offset blurred image -->
+           <feMergeNode in="SourceGraphic"/> <!-- this contains the element that the filter is applied to -->
+         </feMerge>
+       </filter>
+     </defs>
+
+  <g class="main">
+
+
+
+    <image v-bind:xlink:href="route" v-fitimage v-bind:data-image-pos="pos" style="transform-origin: 50% 50%;" />
+
+    <path style="fill: #1B7340;" d="M0,0 l 1200,0 0,100 -1200,50" filter="url(#dropshadow2)"/>
+    <g v-dynamic data-dynamic-origin="none" data-dynamic-width="1120" data-dynamic-height="130" style="transform-origin: 30px 15px;">
+      <text style="font-size: 120px; font-family: 'Jost-700'; fill: #fff; alignment-baseline: hanging;" x="30" y="15">
+        {{ date }}
+      </text>
+    </g>
+
+    <g filter="url(#dropshadow2)" v-dynamic data-dynamic-origin="none" data-dynamic-width="850" data-dynamic-height="180" style="transform-origin: 1170px 645px;">
+      <g>
+        <rect v-bind:x="1200 - 55 - (textInfo(location, { fontFamily: 'Jost', fontSize: '70px'}).width + 50)" y="495" height="75" v-bind:width="textInfo(location, { fontFamily: 'Jost', fontSize: '70px'}).width + 50" style="fill: #1DA64A;" />
+        <text v-bind:x="1200 - 35 - (textInfo(location, { fontFamily: 'Jost', fontSize: '70px'}).width + 50)" y="555" style="font-size: 70px; font-family: 'Jost'; fill: #fff;">
+          {{ location }}
+        </text>
+      </g>
+      <g>
+        <rect v-bind:x="1200 - 55 - (textInfo(location, { fontFamily: 'Jost', fontSize: '70px'}).width + 50) - ((textInfo(locationdetail, { fontFamily: 'Jost', fontSize: '70px'}).width + 50) / 3)" y="570" height="75" v-bind:width="textInfo(locationdetail, { fontFamily: 'Jost', fontSize: '70px'}).width + 50" style="fill: #fff;" />
+        <text v-bind:x="1200 - 35 - (textInfo(location, { fontFamily: 'Jost', fontSize: '70px'}).width + 50) - ((textInfo(locationdetail, { fontFamily: 'Jost', fontSize: '70px'}).width + 50) / 3)" y="630" style="font-size: 70px; font-family: 'Jost'; fill: #90D3ED;">
+          {{ locationdetail }}
+        </text>
+      </g>
+    </g>
+
+    <image v-bind:xlink:href="typeof logo == 'object' ? logo.value : logo" x="15" y="500" height="160" width="160" filter="url(#dropshadow)" />
+
+
+  </g>
+
+
+</svg>

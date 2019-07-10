@@ -5,7 +5,27 @@
 
       <g>
         <circle cx="50%" cy="50%" r="50%" style="fill:#1DA64A;stroke:rgb(90,149,69);stroke-width:0.85px;" v-if="surface == 0"/>
-        <rect x="0%" y="0%" width="100%" height="100%" style="fill:#1DA64A;" v-if="surface == 1"/>
+        <rect x="0%" y="0%" width="100%" height="100%" style="fill:#1DA64A;" v-if="surface == 1" />
+
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" height="100%" width="100%" v-if="surface == 2">
+          <defs>
+            <clipPath id="pride-circle">
+              <circle cx="50%" cy="50%" r="50%" />
+            </clipPath>
+          </defs>
+          <g clip-path="url(#pride-circle)">
+            <rect fill="#750787" width="480" height="480" />
+            <rect fill="#004dff" width="480" height="400" />
+            <rect fill="#008026" width="480" height="320" />
+            <rect fill="#ffed00" width="480" height="240" />
+            <rect fill="#ff8c00" width="480" height="160" />
+            <rect fill="#e40303" width="480" height="80" />
+          </g>
+        </svg>
+
+        <!--<rect x="0%" y="0%" width="100%" height="100%" style="fill:#1D608D;" v-if="surface == 3" />-->
+        <circle cx="50%" cy="50%" r="50%" style="fill: #1D608D;" v-if="surface == 3"/>
+        <rect x="0%" y="0%" width="100%" height="100%" style="fill:#1D608D;" v-if="surface == 4" />
       </g>
 
 
@@ -308,7 +328,7 @@
         {{ char.char }}
       </text>-->
 
-      <text v-bind:transform="'rotate(' + (-125 + textInfo(title, { fontFamily: 'Jost', fontSize: ([ { max: 1500, value: 180 }, { max: 1700, value: 160 }, { max: 1870, value: 130 }, { max: 2050, value: 120 }, { max: 2385, value: 110 }, { max: 2650, value: 100 }, { max: 2840, value: 90 }, { max: Infinity, value: 80 } ].filter(record => textInfo(title, { fontFamily: 'Merriweather', fontSize: '180px' }).width <= record.max)[0].value) + 'px' }).width / 17.5) + ', 750, 750)'" v-bind:data-size="textInfo(title, { fontFamily: 'Merriweather', fontSize: '180px' }).width" v-bind:data-length="textInfo(title, { fontFamily: 'Merriweather', fontSize: '180px' }).width">
+      <text v-bind:transform="'rotate(' + (-125 + textInfo(title, { fontFamily: 'Jost', fontSize: ([ { max: 1500, value: 180 }, { max: 1700, value: 160 }, { max: 1870, value: 130 }, { max: 2050, value: 120 }, { max: 2385, value: 110 }, { max: 2650, value: 100 }, { max: 2840, value: 90 }, { max: Infinity, value: 80 } ].filter(record => textInfo(title, { fontFamily: 'Merriweather', fontSize: '180px' }).width <= record.max)[0].value) + 'px' }).width / 17.5) + ', 750, 750)'" v-bind:data-size="textInfo(title, { fontFamily: 'Merriweather', fontSize: '180px' }).width" v-bind:data-length="textInfo(title, { fontFamily: 'Merriweather', fontSize: '180px' }).width" v-bind:style="{ 'fill': surface == 2 ? '#fff' : '#000' }">
         <textPath alignment-baseline="middle" text-anchor="middles" xlink:href="#circlePath" style="font-family: 'Jost', 'Helvetica Neue'; font-size: 180px;" v-bind:style="{ 'font-size': ([ { max: 1500, value: 180 }, { max: 1700, value: 160 }, { max: 1870, value: 130 }, { max: 2050, value: 120 }, { max: 2385, value: 110 }, { max: 2650, value: 100 }, { max: 2840, value: 90 }, { max: Infinity, value: 80 } ].filter(record => textInfo(title, { fontFamily: 'Merriweather', fontSize: '180px' }).width <= record.max)[0].value) + 'px' }">
           {{ title }}
         </textPath>
@@ -322,7 +342,7 @@
           </text>
         </g>
 
-        <g v-if="descriptionMode == 1" v-dynamic data-dynamic-origin="none" data-dynamic-width="1100" data-dynamic-height="500" style="transform-origin: 50% 50%;">
+        <g v-if="descriptionMode == 1" v-dynamic data-dynamic-origin="none" data-dynamic-width="1000" data-dynamic-height="500" style="transform-origin: 50% 50%;">
           <rect fill="none" v-bind:x="750 - ((textInfo(description, { fontFamily: 'Merriweather', fontSize: '130px' }).width + 30) / 2)" y="636" v-bind:width="textInfo(description, { fontFamily: 'Merriweather', fontSize: '130px' }).width + 30" height="200"/>
           <text x="50%" y="50%" alignment-baseline="middle" text-anchor="middle" style="fill: #000; font-size: 130px; font-family: 'Jost';">
             {{ description }}

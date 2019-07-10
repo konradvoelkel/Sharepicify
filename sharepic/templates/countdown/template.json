@@ -1,0 +1,113 @@
+{
+  "name": "Countdown",
+  "root": "https://toolpic.fridaysforfuture.de/sharepic/templates/countdown/template.json",
+  "preview": "sharepic/templates/countdown/preview.jpg",
+  "documents": [
+    {
+      "width": 1200,
+      "height": 1200,
+      "src": "sharepic/templates/countdown/1200x1200.svg",
+      "alias": "Facebook, Instagram"
+    },
+    {
+      "width": 1200,
+      "height": 675,
+      "src": "sharepic/templates/countdown/1200x675.svg",
+      "alias": "Twitter"
+    }
+  ],
+  "fonts": [
+    {
+      "name": "Jost-700",
+      "src": "fonts/Jost/Jost-700-Bold.ttf",
+      "mime": "font/truetype"
+    },
+    {
+      "name": "Jost-600",
+      "src": "fonts/Jost/Jost-600-Semi.ttf",
+      "mime": "font/truetype"
+    },
+    {
+      "name": "Jost-400",
+      "src": "fonts/Jost/Jost-400-Book.ttf",
+      "mime": "font/truetype"
+    }
+  ],
+  "fields": [
+    {
+      "type": "number",
+      "description": "Countdown",
+      "key": "countdown",
+      "default": "0",
+      "properties": {
+        "length": 3,
+        "value": 0
+      }
+    },
+    {
+      "type": "line",
+      "description": "Info 1",
+      "key": "info1",
+      "default": "Mainzer",
+      "properties": {
+
+      }
+    },
+    {
+      "type": "line",
+      "description": "Info 2",
+      "key": "info2",
+      "default": "Klimastreik",
+      "properties": {
+
+      }
+    },
+    {
+      "type": "line",
+      "description": "Description",
+      "key": "description",
+      "default": "DAYS REMAINING",
+      "properties": {
+
+      }
+    },
+    {
+      "type": "line",
+      "description": "Shader Text",
+      "key": "shadertext",
+      "default": "FINAL COUNTDOWN · FINAL COUNTDOWN · FINAL COUNTDOWN",
+      "properties": {
+
+      }
+    },
+    {
+      "type": "line",
+      "description": "Subtitle",
+      "key": "subtitle",
+      "default": "05.07.2019 | fridaysforfuture.de | #actnow",
+      "properties": {
+
+      }
+    },
+    {
+      "type": "selection",
+      "description": "Logo",
+      "key": "logo",
+      "properties": {
+        "items": [
+          {
+            "type": "value",
+            "value": "sharepic/resources/logo.svg"
+          },
+          {
+            "type": "value",
+            "value": "sharepic/resources/logo-2.svg"
+          },
+          {
+            "type": "file"
+          }
+        ]
+      }
+    }
+  ]
+}

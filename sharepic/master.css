@@ -141,14 +141,26 @@ body::-webkit-scrollbar {
   flex: 1;
 }
 footer {
+  font-family: "Josty";
+  font-weight: 200;
+  letter-spacing: 1px;
+  color: #fff;
   display: inline-block;
   flex: none;
+  background-color: #222;
+  border-top: 1px solid #111;
+  text-align: center;
+  padding: 4px 6px;
 }
-
+footer a {
+  vertical-align: middle;
+  text-decoration: underline;
+  color: inherit;
+}
 
 .sharepic-app .tools {
   flex: none;
-  width: 300px;
+  width: 425px;
   font-size: 1.2em;
   background-color: #303030;
 }
@@ -158,6 +170,7 @@ footer {
 .sharepic-app .preview {
   flex: 1;
   height: 100%;
+  cursor: crosshair;
 
 }
 @media screen and (max-width: 600px) {
@@ -170,7 +183,7 @@ footer {
     padding-top: 30px !important;
   }
   .sharepic-app .preview {
-
+    height: auto;
   }
   .navigation.hidden {
     background-color: #111;
@@ -241,9 +254,9 @@ footer {
 }
 .sharepic-app .tools li textarea {
   width: calc(100% - 30px);
-  height: 50px;
+  height: 60px;
   border: none;
-  font-size: 1.1em;
+  font-size: .8em;
   padding: 4px 8px;
   -webkit-appearance: none;
   border: 2px solid transparent;
@@ -251,12 +264,15 @@ footer {
 .sharepic-app .tools li textarea:focus {
   border-color: #1DA64A;
 }
-.sharepic-app .tools li input[type="text"] {
+.sharepic-app .tools li input[type="text"], .sharepic-app .tools li input[type="number"] {
   width: calc(100% - 30px);
   font-size: 1.1em;
   padding: 4px 8px;
   -webkit-appearance: none;
   border: 2px solid transparent;
+}
+.sharepic-app .tools li input[type="number"] {
+  width: 200px;
 }
 .sharepic-app .tools li input[type="text"]:focus {
   border-color: #1DA64A;
@@ -303,6 +319,68 @@ footer {
 .sharepic-app .tools .controls .selection .selection-item-inner {
   width: 100%;
   height: 100%;
+}
+
+.sharepic-app .tools .controls .checklist {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  color: #fff;
+}
+.sharepic-app .tools .controls .checklist > li {
+  list-style: none;
+  display: inline-block;
+  margin: 0 5px;
+  padding: 0;
+}
+.sharepic-app .tools .controls .checklist > li span {
+  display: inline-block;
+  margin: 0 0 0 5px;
+}
+.sharepic-app .tools .controls .checklist > li > * {
+  vertical-align: middle;
+}
+.sharepic-app .tools .controls input[type="checkbox"] {
+  -webkit-appearance: none;
+  height: 20px;
+  width: 20px;
+  cursor: default;
+  background-color: #1DA64A;
+  border-radius: 3px;
+  border: 1px solid #1DA64A;
+  background-size: 135%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj4KICA8Y2lyY2xlIGN4PSI1MCUiIGN5PSI1MCUiIHI9IjUwJSIgc3R5bGU9ImZpbGw6ICNmZmY7IiAvPgo8L3N2Zz4K');
+  transition: all 0.3s;
+}
+.sharepic-app .tools .controls input[type="checkbox"]:checked {
+  background-size: 30%;
+}
+
+
+.sharepic-app .tools .controls select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  background-color: #1DA64A;
+  color: #fff;
+  padding: 3px 6px 3px 36px;
+  border: none;
+  border-radius: 0;
+  font-size: 0.9em;
+  cursor: pointer;
+
+  background-image: url('data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSI+Cgk8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBzdHlsZT0iZmlsbDogIzAwMDsgb3BhY2l0eTogMC4yOyIvPgo8L3N2Zz4K'),
+                    url('data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmlld0JveD0iMCAwIDEyOSAxMjkiPgogIDxwYXRoIGZpbGw9IiNmZmYiIGQ9Im0xMjEuMywzNC42Yy0xLjYtMS42LTQuMi0xLjYtNS44LDBsLTUxLDUxLjEtNTEuMS01MS4xYy0xLjYtMS42LTQuMi0xLjYtNS44LDAtMS42LDEuNi0xLjYsNC4yIDAsNS44bDUzLjksNTMuOWMwLjgsMC44IDEuOCwxLjIgMi45LDEuMiAxLDAgMi4xLTAuNCAyLjktMS4ybDUzLjktNTMuOWMxLjctMS42IDEuNy00LjIgMC4xLTUuOHoiLz4KPC9zdmc+Cg==');
+
+  background-repeat: no-repeat;
+  background-size: 30px 100%, auto 70%;
+  background-position: 0 0, 5px center;
+}
+.sharepic-app .tools .controls select option {
+  font-size: 0.5em;
 }
 
 .test-image {
@@ -549,4 +627,95 @@ footer {
   font-weight: 200;
   cursor: pointer;
   margin: 0 0 20px 0;
+}
+
+footer {
+  vertical-align: middle;
+  padding-top: 7px;
+}
+
+.instance-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  vertical-align: middle;
+}
+.instance-list li {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  height: 34px;
+  width: 34px;
+  margin: 0 2px;
+  border: 3px solid transparent;
+  border-radius: 50%;
+  box-sizing: border-box;
+  vertical-align: middle;
+}
+.instance-list li.active {
+  border-color: #fff;
+}
+.instance-list li a {
+  display: block;
+}
+.instance-list li a img {
+  height: 100%;
+  width: 100%;
+}
+
+
+.map-container {
+
+}
+.route-map {
+  width: 400px;
+  height: 400px;
+}
+@media screen and (max-width: 600px) {
+  .route-map {
+    width: calc(100vw - 30px);
+    height: calc(100vw - 30px);
+  }
+}
+.map-container .map-controls {
+  padding: 5px 3px;
+}
+.map-container .map-controls .btn-map {
+  border-radius: 50%;
+  margin: 0 2px;
+  width: 24px;
+  height: 24px;
+  padding: 7px;
+  background-color: #1DA64A;
+  display: inline-block;
+}
+.map-container .map-controls .btn-map  img {
+  width: 100%;
+  height: 100%;
+}
+
+
+.map-container .map-controls .map-input {
+
+}
+.map-container .map-controls .map-input .input-label {
+  color: #fff;
+  font-size: 0.8em;
+}
+
+.map-container .map-controls .map-input .input-field {
+  width: 75px;
+  font-size: 0.9em;
+  padding: 2px 6px;
+  -webkit-appearance: none;
+  border: 2px solid transparent;
+  display: block;
+  margin: 4px 0 8px;
+}
+.map-container .map-controls .map-input .input-field:focus {
+  border-color: #1DA64A;
+}
+.map-container .map-controls .map-input input[type="number"] {
+
 }

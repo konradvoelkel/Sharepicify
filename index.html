@@ -5,8 +5,15 @@
     <meta charset="utf-8">
     <script src="js/vue.js" charset="utf-8"></script>
     <!--<script src="https://cdn.jsdelivr.net/npm/vue"></script>-->
-    <script src="sharepic/selectItem.js" charset="utf-8"></script>
-    <script src="sharepic/main.js" charset="utf-8"></script>
+    <!--<script src="https://cdn.jsdelivr.net/npm/exif-js"></script>
+    <script src="sharepic/binaryajax.js" charset="utf-8"></script>-->
+
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.0.0/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.0.0/mapbox-gl.css' rel='stylesheet' />
+
+    <script src="sharepic/JavaScript-Load-Image/js/load-image.all.min.js"></script>
+
+    <script src="sharepic/main.js?67347634578" charset="utf-8"></script>
     <link rel="stylesheet" href="sharepic/master.css">
 
     <script type="text/javascript">
@@ -30,7 +37,7 @@
       }
       @font-face {
         font-family: "Jost-900-Black";
-        src: url("fonts/Jost-900-Black.ttf");
+        src: url("fonts/Jost/Jost-900-Black.ttf");
       }
       @font-face {
         font-family: "Merriweather";
@@ -45,7 +52,7 @@
       }
     </style>
 
-    <title>Sharepicify</title>
+    <title>Toolpic</title>
   </head>
   <body>
     <div class="navigation" v-bind:class="{ hidden: !show }">
@@ -80,7 +87,15 @@
         </div>
       </div>
       <footer>
-        © 2019 Maurice Conrad | GPG
+        <ul class="instance-list">
+          <li v-for="instance in instances" v-bind:class="{ active: instance.active }">
+            <a v-bind:href="'#' + instance.key">
+              <img v-bind:src="instance.icon" alt="Instance Icon">
+            </a>
+          </li>
+        </ul>
+        © 2019 <a href="https://maurice-conrad.eu" target="_blank">Maurice Conrad</a> |
+        <a href="https://github.com/MauriceConrad/Sharepicify" target="_blank">GitHub</a>
 
       </footer>
     </div>
@@ -308,5 +323,4 @@
 
   </body>
   <script src="js/app.js" charset="utf-8"></script>
-  <script src="sharepic/canvg.min.js" charset="utf-8"></script>
 </html>

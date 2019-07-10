@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1200 675" version="1.1">
+
+  <defs>
+    <filter id="sw" style="color-interpolation-filters:sRGB">
+      <feColorMatrix values="0.21 0.72 0.072 0 0 0.21 0.72 0.072 0 0 0.21 0.72 0.072 0 0 0 0 0 1 0"/>
+    </filter>
+  </defs>
+
+  <g class="main">
+
+
+
+    <image v-if="typeof backgroundImage == 'object'" v-bind:xlink:href="backgroundImage.value" v-fitimage v-bind:data-image-pos="pos" style="transform-origin: 50% 50%;" v-bind:filter="effects[0] ? 'url(#sw)' : 'none'" />
+
+    <g v-dynamic data-dynamic-origin="none" data-dynamic-width="1140" data-dynamic-height="500" style="transform-origin: 30px 20px;">
+      <g v-for="line in text[1]">
+        <rect style="fill: #1DA64A;" x="30" v-bind:y="(20 + text[1].indexOf(line) * 82)" height="70" v-bind:width="textInfo(line, { fontFamily: 'Jost-400', fontSize: '52px' }).width + 40" />
+        <text x="50" v-bind:y="(30 + text[1].indexOf(line) * 82)" style="alignment-baseline: hanging; fill: #fff; font-size: 52px; font-family: 'Jost-400'; text-anchor: start;">
+          {{ line }}
+        </text>
+      </g>
+    </g>
+
+
+    <g v-dynamic data-dynamic-origin="none" data-dynamic-width="930" data-dynamic-height="160" style="transform-origin: 1170px 655px;">
+      <g>
+        <text x="1170" v-bind:y="655 - (authordetail.length * 45) - 25" style="text-anchor: end; fill: #fff; font-family: 'Jost-600'; font-size: 75px; text-shadow: 0px 0px 6px rgba(0, 0, 0, 1);">
+          {{ author }}
+        </text>
+      </g>
+      <g>
+        <g v-for="line in authordetail">
+          <text x="1170" v-bind:y="655 + (authordetail.indexOf(line) * 45) - (authordetail.length * 45)" style="alignment-baseline: hanging; text-anchor: end; fill: #fff; font-family: 'Jost-400'; font-size: 40px; text-shadow: 0px 0px 6px rgba(0, 0, 0, 1);">
+            {{ line }}
+          </text>
+        </g>
+      </g>
+    </g>
+
+
+
+    <defs>
+      <filter id="dropshadow" height="130%">
+        <feGaussianBlur in="SourceAlpha" stdDeviation="7"/> <!-- stdDeviation is how much to blur -->
+        <feOffset dx="0" dy="10" result="offsetblur"/> <!-- how much to offset -->
+        <feComponentTransfer>
+          <feFuncA type="linear" slope="0.6"/> <!-- slope is the opacity of the shadow -->
+        </feComponentTransfer>
+        <feMerge>
+          <feMergeNode/> <!-- this contains the offset blurred image -->
+          <feMergeNode in="SourceGraphic"/> <!-- this contains the element that the filter is applied to -->
+        </feMerge>
+      </filter>
+    </defs>
+
+    <image v-bind:xlink:href="typeof logo == 'object' ? logo.value : logo" x="15" y="520" height="140" width="140" filter="url(#dropshadow)" />
+
+
+  </g>
+
+
+</svg>

@@ -39,10 +39,7 @@ In folgendem Beispiel sind dire Steuerlemente definiert. Ein manuelle Auswahl (`
       "description": "Background",
       "key": "backgroundImage",
       "default": {
-        "value": "sharepic/templates/fff/default.jpg",
-        "info": {
-          "ratio": 1
-        }
+        "value": "sharepic/templates/fff/default.jpg"
       },
       "properties": {
         "items": [
@@ -93,6 +90,7 @@ In `default` wird der Default-Wert festgelegt und `properties` enthält individu
 |Type|Output|
 |--------
 |`text`|Array aus Strings|
+|`dynamic-text`|Array aus Strings welches Text dynamisch in verschiedene Verhältnisse presst (dynamische Zeilenumbrüche)|
 |`line`|String|
 |`number`|Number|
 |`selection`|Manuellen Wert des selektierten Elementes|
@@ -101,10 +99,7 @@ Dazu einfach einen Blick auf das obige Beipspiel werfen. Alle Steuerlemente sind
 
 ```json
 {
-  "value": "data:image/mime;base64,.......",
-  "info": {
-    "ratio": 1
-  }
+  "value": "data:image/mime;base64,......."
 }
 ```
 
@@ -121,6 +116,8 @@ Die Vue-Instanz liegt **innerhalb** der `.main` Group. Das hat den Hintergund, d
 
 
   <g class="main">
+
+
     <image v-if="typeof backgroundImage == 'object'" v-bind:xlink:href="backgroundImage.value" v-bind:x="(backgroundImage.info.ratio >= 1 ? -((backgroundImage.info.ratio - 1) * pos) : 0) + '%'" v-bind:y="(backgroundImage.info.ratio < 1 ? -(((1 / backgroundImage.info.ratio) - 1) * pos) : 0) + '%'" v-bind:height="(backgroundImage.info.ratio < 1 ? ((1 / backgroundImage.info.ratio) * 100) : 100) + '%'" v-bind:width="(backgroundImage.info.ratio >= 1 ? (backgroundImage.info.ratio * 100) : 100) + '%'" />
     <rect x="0" y="0" width="100%" height="100%" v-bind:fill="backgroundImage" v-if="typeof backgroundImage != 'object'"/>
 
@@ -148,6 +145,57 @@ Die Vue-Instanz liegt **innerhalb** der `.main` Group. Das hat den Hintergund, d
 
 </svg>
 
+```
+
+### Vue-Directives
+
+Damit gewisse grafisch/mathematische Zusammenhänge funktionieren, werden teilweise sehr komplexe JavaScript-Ausdrücke benötigt. Ein Bild, dass sich mit einem `pos` Parameter im `cover`-Stil von CSS-Background-Images bewegen lässt, würde z.B. folgenden Ausdruck benötigen:
+
+```html
+<image v-if="typeof backgroundImage == 'object'" v-bind:xlink:href="backgroundImage.value" v-bind:x="(backgroundImage.info.ratio >= 1 ? -((backgroundImage.info.ratio - 1) * pos) : 0) + '%'" v-bind:y="(backgroundImage.info.ratio < 1 ? -(((1 / backgroundImage.info.ratio) - 1) * pos) : 0) + '%'" v-bind:height="(backgroundImage.info.ratio < 1 ? ((1 / backgroundImage.info.ratio) * 100) : 100) + '%'" v-bind:width="(backgroundImage.info.ratio >= 1 ? (backgroundImage.info.ratio * 100) : 100) + '%'" />
+```
+
+Das ist nicht nur serh hässlich, es ist auch serh schwer zu debuggen und anzupassen. UM solche und mehr grafische Zusammenhänge zu automatisieren, gibt es mehrere Vue.js Directives, die solche Arbeiten automatisch erledigen.
+
+#### Fit Image
+
+Die Directive `v-fitimage` skaliert und positioniert ein `<image></image>` im `cover`-Stil. Die benötigten Informationen wie Maße des Bildes oder der `viewBox` werden automatisch erfasst. Das einzige Attribut ist `data-pos`, welches die Position des Bildes (in die jeweils überstehende Richtung) regelt. Dieser Wert liegt zwischen `-1` und `1`.
+
+```html
+<image xlink:href="<imgSource>" v-fitimage data-image-pos="0.5" />
+```
+
+*Selbstvertändlich bietet es sich an,* `data-pos` *typischerweise mittels* `v-bind:` *dynamisch aus dem Vue.js-Controller zu beziehen.*
+
+
+#### Dynamic Size
+
+Die Directive `v-dynamic` skaliert ein Element automatisch in eine Art festen Rahmen, der nicht überschritten werden darf. Sinnvoll ist diese Directive, wenn man ein dynamisch großes Element (wie z.B. Text) skalieren lassen möchte. Dabei wird eine Größe nie überschritten sondern immer auf die jeweilige skaliert, die die andere nicht überschreitet. Es ist wichtig, die `transform-origin` im `style` zu setzen, da die Skalierung von dieser aus stattfindet.
+
+
+```html
+<g v-dynamic data-dynamic-origin="none" data-dynamic-width="1140" data-dynamic-height="900" style="transform-origin: 30px 40px;">
+
+</g>
+```
+
+Attribute:
+
+1. `data-dynamic-origin`: Eine relativ zum Element befindliche `transform-origin`
+2. `data-dynamic-width`: *Breite* auf die skaliert wird
+2. `data-dynamic-height`: *Höhe* auf die skaliert wird
+
+
+### Components
+
+In manchen Fällen erleichtern auch *Vue-Components* die Arbeit.
+
+#### Multiline Text
+
+Die Component `<multiline-text>` positioniert einen Text automatisch mit mehreren Zeilen. Dabei kann er links- oder rechtsbündig sowie nach oben oder unten hin positioniert sein.
+
+```html
+<multiline-text x="40" y="550" padding="25 35" text="['Line 1', 'Line 2', 'Line 3']" lineheight="1.2" background="#f00" align="right" verticalalign="center" css="font-size: 150px; font-family: 'Jost-500'; fill: #FE0000;"></multiline-text>
 ```
 
 

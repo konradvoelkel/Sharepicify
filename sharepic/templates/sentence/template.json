@@ -1,7 +1,21 @@
 {
   "name": "Sentence",
+  "root": "https://toolpic.fridaysforfuture.de/sharepic/templates/sentence/template.json",
   "preview": "sharepic/templates/sentence/preview.jpg",
-  "document": "sharepic/templates/sentence/document.svg",
+  "documents": [
+    {
+      "width": 1200,
+      "height": 1200,
+      "src": "sharepic/templates/sentence/1200x1200.svg",
+      "alias": "Facebook, Instagram"
+    },
+    {
+      "width": 1200,
+      "height": 675,
+      "src": "sharepic/templates/sentence/1200x675.svg",
+      "alias": "Twitter"
+    }
+  ],
   "fonts": [
     {
       "name": "Jost",
@@ -35,10 +49,7 @@
       "description": "Background",
       "key": "backgroundImage",
       "default": {
-        "value": "sharepic/templates/sentence/default.jpg",
-        "info": {
-          "ratio": 1.8043478261
-        }
+        "value": "sharepic/templates/sentence/default.jpg"
       },
       "properties": {
         "items": [
@@ -55,8 +66,9 @@
       "default": 0,
       "properties": {
         "value": 0,
-        "max": 100,
-        "min": 0,
+        "max": 1,
+        "min": -1,
+        "step": 0.05,
         "kind": "slider"
       }
     },

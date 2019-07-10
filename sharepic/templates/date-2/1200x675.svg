@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+
+     viewBox="0 0 1200 675"
+     version="1.1">
+
+
+
+  <g class="main">
+
+
+
+    <image v-if="typeof backgroundImage == 'object'" v-bind:xlink:href="backgroundImage.value" v-fitimage v-bind:data-image-pos="pos" style="transform-origin: 50% 50%;" />
+
+    <!--<g v-dynamic data-dynamic-width="1100" data-dynamic-height="600" style="transform-origin: 50% 50px;">
+      <g v-for="line in title" v-bind:transform="'translate(' + (true ? (600 - (textInfo(line, { fontFamily: 'Jost', fontSize: '130px' }).width + 50) / 2) : 40) + ', ' + (title.indexOf(line) * 140) + ')'">
+        <rect x="20" y="73" v-bind:width="textInfo(line, { fontFamily: 'Jost', fontSize: '130px' }).width + 0" height="100" style="fill: #1DA64A;" />
+        <text x="40" y="150" style="font-family: 'Jost'; font-size: 130px; fill: #fff; text-shadow: 0px 1px 10px rgba(0, 0, 0, .7);">
+          {{ line }}
+        </text>
+      </g>
+    </g>-->
+    <g v-if="options[0]">
+      <g>
+        <rect x="50" y="30" height="75" v-bind:width="textInfo(date, { fontFamily: 'Jost', fontSize: '70px'}).width + 50" style="fill: #000;" />
+        <text x="75" y="90" style="font-size: 70px; font-family: 'Jost'; fill: #fff;">
+          {{ date }}
+        </text>
+      </g>
+      <g>
+        <rect v-bind:x="50 + textInfo(date, { fontFamily: 'Jost', fontSize: '70px'}).width + 50 - ((textInfo(time, { fontFamily: 'Jost', fontSize: '70px'}).width + 50) / 3)" y="105" height="75" v-bind:width="textInfo(time, { fontFamily: 'Jost', fontSize: '70px'}).width + 50" style="fill: #fff;" />
+        <text v-bind:x="75 + textInfo(date, { fontFamily: 'Jost', fontSize: '70px'}).width + 50 - ((textInfo(time, { fontFamily: 'Jost', fontSize: '70px'}).width + 50) / 3)" y="165" style="font-size: 70px; font-family: 'Jost'; fill: #000;">
+          {{ time }}
+        </text>
+      </g>
+      <g>
+        <rect v-bind:x="1200 - 55 - (textInfo(location, { fontFamily: 'Jost', fontSize: '70px'}).width + 50)" y="495" height="75" v-bind:width="textInfo(location, { fontFamily: 'Jost', fontSize: '70px'}).width + 50" style="fill: #fff;" />
+        <text v-bind:x="1200 - 35 - (textInfo(location, { fontFamily: 'Jost', fontSize: '70px'}).width + 50)" y="555" style="font-size: 70px; font-family: 'Jost'; fill: #000;">
+          {{ location }}
+        </text>
+      </g>
+      <g>
+        <rect v-bind:x="1200 - 55 - (textInfo(location, { fontFamily: 'Jost', fontSize: '70px'}).width + 50) - ((textInfo(locationdetail, { fontFamily: 'Jost', fontSize: '70px'}).width + 50) / 3)" y="570" height="75" v-bind:width="textInfo(locationdetail, { fontFamily: 'Jost', fontSize: '70px'}).width + 50" style="fill: #000;" />
+        <text v-bind:x="1200 - 35 - (textInfo(location, { fontFamily: 'Jost', fontSize: '70px'}).width + 50) - ((textInfo(locationdetail, { fontFamily: 'Jost', fontSize: '70px'}).width + 50) / 3)" y="630" style="font-size: 70px; font-family: 'Jost'; fill: #fff;">
+          {{ locationdetail }}
+        </text>
+      </g>
+    </g>
+
+
+
+
+    <g v-dynamic data-dynamic-origin="none" data-dynamic-width="1050" data-dynamic-height="300" style="transform-origin: 50px 190px; text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);">
+      <text x="50" y="265" style="font-family: 'Jost-400'; font-size: 55px; fill: #fff;">
+        {{ subtitle }}
+      </text>
+      <g>
+        <g v-for="line in title">
+          <text x="50" v-bind:y="385 + title.indexOf(line) * 115" style="font-family: 'Jost-700'; font-size: 105px; fill: #fff;">
+            {{ line }}
+          </text>
+        </g>
+      </g>
+
+    </g>
+
+
+    <defs>
+      <filter id="dropshadow" height="130%">
+        <feGaussianBlur in="SourceAlpha" stdDeviation="7"/> <!-- stdDeviation is how much to blur -->
+        <feOffset dx="0" dy="10" result="offsetblur"/> <!-- how much to offset -->
+        <feComponentTransfer>
+          <feFuncA type="linear" slope="0.6"/> <!-- slope is the opacity of the shadow -->
+        </feComponentTransfer>
+        <feMerge>
+          <feMergeNode/> <!-- this contains the offset blurred image -->
+          <feMergeNode in="SourceGraphic"/> <!-- this contains the element that the filter is applied to -->
+        </feMerge>
+      </filter>
+    </defs>
+
+    <image v-bind:xlink:href="typeof logo == 'object' ? logo.value : logo" x="15" y="500" height="160" width="160" filter="url(#dropshadow)" />
+
+
+  </g>
+
+
+</svg>
