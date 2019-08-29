@@ -23,7 +23,8 @@ const instances = {
       "sharepic/templates/imperative/template.json",
       "sharepic/templates/date/template.json",
       "sharepic/templates/sentence/template.json",
-      "sharepic/templates/logo/template.json"
+      "sharepic/templates/logo/template.json",
+      "sharepic/templates/s4f-logo/template.json"
     ]
   },
   en: {
