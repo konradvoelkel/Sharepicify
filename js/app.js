@@ -10,27 +10,27 @@ const instances = {
   de: {
     icon: "icons/germany.svg",
     templates: [
-      "sharepic/templates/date-2/template.json",
-      "sharepic/templates/fff/template.json",
-      "sharepic/templates/quote/template.json",
-      "sharepic/templates/info/template.json",
-      "sharepic/templates/checklist/template.json",
-      "sharepic/templates/pride/template.json",
-      "sharepic/templates/countdown/template.json",
-      "sharepic/templates/map/template.json",
-      "sharepic/templates/letter/template.json",
-      "sharepic/templates/influence/template.json",
-      "sharepic/templates/imperative/template.json",
-      "sharepic/templates/date/template.json",
-      "sharepic/templates/sentence/template.json",
-      "sharepic/templates/logo/template.json",
+//      "sharepic/templates/date-2/template.json",
+//      "sharepic/templates/fff/template.json",
+//      "sharepic/templates/quote/template.json",
+//      "sharepic/templates/info/template.json",
+//     "sharepic/templates/checklist/template.json",
+//      "sharepic/templates/pride/template.json",
+//      "sharepic/templates/countdown/template.json",
+//      "sharepic/templates/map/template.json",
+//      "sharepic/templates/letter/template.json",
+//      "sharepic/templates/influence/template.json",
+//      "sharepic/templates/imperative/template.json",
+//      "sharepic/templates/date/template.json",
+//      "sharepic/templates/sentence/template.json",
+//      "sharepic/templates/logo/template.json",
       "sharepic/templates/s4f-logo/template.json"
     ]
   },
   en: {
     icon: "icons/united-kingdom.svg",
     templates: [
-      "sharepic/templates/influence/template.json"
+      "sharepic/templates/s4f-logo/template.json"
     ]
   },
   get default() {
@@ -139,7 +139,7 @@ const exportController = new Vue({
   el: '.export',
   data: {
     show: false,
-    src: 'http://lokalo.de/wp-content/uploads/2019/01/fridayforfuture_trier.jpg'
+      src: 'http://os.scientists4future.org/wp-content/uploads/2019/08/ipcc-sr15-illustration-1024x768.jpg'
   },
   methods: {
     close() {

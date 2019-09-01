@@ -12,19 +12,9 @@
   ],
   "fonts": [
     {
-      "name": "Jost",
-      "src": "fonts/jost.ttf",
-      "mime": "font/truetype"
-    },
-    {
-      "name": "Jost-900-Black",
-      "src": "fonts/Jost/Jost-900-Black.ttf",
-      "mime": "font/truetype"
-    },
-    {
-      "name": "Merriweather",
-      "src": "fonts/Merriweather Sans.ttf",
-      "mime": "font/truetype"
+      "name": "Montserrat",
+      "src": "fonts/Montserrat/Montserrat-Bold.otf",
+      "mime": "font/opentype"
     }
   ],
   "fields": [
